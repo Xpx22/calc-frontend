@@ -1,10 +1,19 @@
 body {
-  margin: 0;
+  margin: 8px !important;
+  height: 100%;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: linear-gradient(to right, #1f2b6c, #007575); */
+  background: linear-gradient(to right, #5298DE, #91BEEB);
+}
+
+body > #root > div {
+  height: 100vh;
+  width: 100%;
 }
 
 code {
