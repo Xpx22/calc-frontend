@@ -8,7 +8,7 @@ export default function CalcBtn(props) {
   }
 
   return (
-    <Button value={props.text} variant="contained" className="btn-font" onClick={clickHandler}>
+    <Button value={props.text} variant="contained" className="btn-style" onClick={clickHandler}>
         {props.text}
     </Button>
   )
