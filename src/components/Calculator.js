@@ -33,7 +33,7 @@ export default function Calculator() {
     { text: ".", onClick: addToResult },
     { text: "=", onClick: calculateResult }
   ];
-  const BACKEND_URL = "http://localhost:3001";
+  const BACKEND_URL = "http://localhost:3001/v1/storage";
 
   const [isSnackBarOpen, setSnackbarToggle] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -54,7 +54,7 @@ export default function Calculator() {
           id: id
         }
       };
-      const response = await axios.post(BACKEND_URL + "/v1/persist", data, config);
+      const response = await axios.post(BACKEND_URL, data, config);
       if(!id){
         id = response.data.id;
         localStorage.setItem("id", response.data.id);
@@ -84,7 +84,7 @@ export default function Calculator() {
           id: id
         }
       };
-      const response = await axios.get(BACKEND_URL + "/v1/read", config);
+      const response = await axios.get(BACKEND_URL, config);
       result.innerText = response.data.data;
       setIsSuccess(true);
       setAlertMessage(response.data.message);
